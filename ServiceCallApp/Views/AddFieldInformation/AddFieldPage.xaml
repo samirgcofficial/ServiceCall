@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="ServiceCallApp.Views.AddFieldInformation.AddFieldPage">
+    <ContentPage.Content>
+ <StackLayout Spacing="10" Padding="10">
+  <Grid>
+      <Grid>
+          <ListView  ItemsSource="{Binding Images,Mode=TwoWay}" IsPullToRefreshEnabled="True"  x:Name="EmployeeListView" HasUnevenRows="true" SeparatorVisibility="Default" >  
+            <ListView.ItemTemplate>  
+                <DataTemplate> 
+                        <ViewCell>
+                   <StackLayout Orientation="Horizontal">
+                            <Image Source="{Binding ImgSrc,Mode=TwoWay}" HeightRequest="50" WidthRequest="50"  />
+                            <StackLayout HorizontalOptions="StartAndExpand">
+                                <Label Text="Site1"
+                                       VerticalTextAlignment="Center"
+                                       VerticalOptions="CenterAndExpand"
+                                       FontAttributes="Bold" />
+                                <Label Text="{Binding MyDetail}"
+                                       TextColor="Gray" />
+                            </StackLayout>
+                            <Button Text="Follow Me"
+                                    BorderColor="Silver"
+                                   FontSize="Small"
+                                   TextColor="White"
+                                   BackgroundColor="#3399ff"
+                                   VerticalOptions="Center"
+                                   />
+                            </StackLayout>
+                            </ViewCell>
+                </DataTemplate>  
+            </ListView.ItemTemplate>  
+        </ListView>  
+      </Grid>
+      <StackLayout Orientation="Vertical" VerticalOptions="EndAndExpand">
+  <Button VerticalOptions="EndAndExpand" Text="Take Multiple photo and send it" HeightRequest="50"  Command="{Binding OpenCameraCommand}"/>
+ <Button VerticalOptions="EndAndExpand" Text="Send Site Photo" HeightRequest="50" Clicked="OnButtonClicked"/>
+
+      </StackLayout>
+
+
+  </Grid>
+
+    </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

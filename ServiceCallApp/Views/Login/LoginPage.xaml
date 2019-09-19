@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" 
+    ios:Page.UseSafeArea="true"
+    xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="ServiceCallApp.Views.Login.LoginPage">
+     <ContentPage.Content>
+         <Grid>
+            <Grid BackgroundColor="White">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="0,10,0,0" Grid.Row="0">
+                <Label Text="@Agathsya Technology Live Coding"/>
+                <Image Source="mediaw.png" Opacity="0.6" VerticalOptions="Start" Margin="0,3,0,0"/>
+                    
+                </StackLayout>
+
+            <Grid Grid.Row="1" Margin="20,0,20,0" RowSpacing="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+             <!--<forms:AnimationView 
+	x:Name="animationView" 
+	Grid.Row="0"
+	Animation="MyUser.json" 
+	Loop="True"
+    AutoPlay="True"
+	HeightRequest="120"
+    WidthRequest="120"
+	VerticalOptions="Start" 
+	HorizontalOptions="Center"/>-->
+                <Image Source="Capture.PNG" HeightRequest="70" VerticalOptions="EndAndExpand"/>
+                <Entry x:Name="MyUserNumber"  Grid.Row="1" Placeholder="Phone Number" Text="{ Binding UserName}" Keyboard="Numeric" PlaceholderColor="#bababa" FontSize="16"/>
+                <Entry x:Name="MyPassword" Grid.Row="2" Text="{Binding Password}"  Placeholder="Password" PlaceholderColor="#bababa" FontSize="16"/>
+                <Button Text="LogIn" Command="{Binding LoginCommand}" FontSize="18" BackgroundColor="#3897f0" TextColor="White" HeightRequest="40" VerticalOptions="Start" Grid.Row="3"/>
+                <Label Text="LoginTrouble?GetHelp" HorizontalOptions="Center" Grid.Row="4" Margin="0,10,0,0" FontSize="12"/>
+                <Grid Grid.Row="5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label BackgroundColor="#bababa" HeightRequest="1" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+                    <!--<Label Text="" Grid.Column="1" VerticalOptions="Center" Margin="10,0,10,0"/>-->
+                    <Image Source="pngtree.jpg" Grid.Column="1" VerticalOptions="Center" Margin="10,0,10,0"/>
+                    <Label BackgroundColor="#bababa" Grid.Column="2" HeightRequest="1" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+                </Grid>
+
+                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Grid.Row="6">
+
+                   
+                    <Label Text="LoginWithFacebook" TextColor="#485992"  />
+
+
+                </StackLayout>
+
+            </Grid>
+
+            <StackLayout Grid.Row="2" BackgroundColor="#ffffff">
+
+                <Label HeightRequest="1" BackgroundColor="#e3e3e3"/>
+                <Label Text="Dont'Have Account Login? SignUp" VerticalOptions="FillAndExpand" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+            </StackLayout>
+       
+        </Grid>
+ <ActivityIndicator x:Name="HomeIndicator"
+                HorizontalOptions="CenterAndExpand"
+                 IsEnabled="{Binding IsBusy}"
+                 IsRunning="{Binding IsBusy}"
+                
+                VerticalOptions="CenterAndExpand" />
+         </Grid>
+       
+    </ContentPage.Content>
+</ContentPage>
+
+
+    <!--<ContentPage.Content>
+        <StackLayout VerticalOptions="CenterAndExpand">
+         <Entry Text="{Binding UserName}"/>
+         <Entry Text="{Binding Password}"/>
+         <Button Text="MyLogin" Command="{Binding LoginCommand}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>-->

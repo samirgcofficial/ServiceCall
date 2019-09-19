@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="ServiceCallApp.Views.Dashboard.DashboardPage">
+
+    <ContentPage.Content>
+        <Grid>
+
+<Grid>
+
+ <ListView  ItemsSource="{Binding UserSection,Mode=TwoWay}"
+              CachingStrategy="RecycleElement"
+               HasUnevenRows="True"
+                  
+               BackgroundColor="White"
+              x:Name="PositionsListItems"   
+              SeparatorVisibility="Default"
+               Footer="">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid Padding="5"  ColumnSpacing="40"
+                          Margin="0,0,0,0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                     <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand"
+                                     Grid.Column="1" >
+                                    <Label Text="{Binding id}" TextColor="Black"/>
+                                    <Label Text="{Binding name}" TextColor="Black"/>
+                                </StackLayout>
+                            </Grid>
+                            </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            
+
+        </Grid>
+<Button Text="Take Site Images" Margin="20"  HeightRequest="50" WidthRequest="50" VerticalOptions="EndAndExpand" TextColor="White" BackgroundColor="#007fff " Clicked="OnButtonClicked"/>
+
+        </Grid>
+        
+      
+    </ContentPage.Content>
+</ContentPage>
