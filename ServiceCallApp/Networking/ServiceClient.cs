@@ -87,9 +87,6 @@ namespace ServiceCallApp.Networking
         {
             try
             {
-         
-
-
                 LoginPageRequestModel commonSignInModel = new LoginPageRequestModel(username, password);
                 var json = JsonConvert.SerializeObject(commonSignInModel);
                 var requiredcontent = new StringContent(json, Encoding.UTF8, "application/json");
